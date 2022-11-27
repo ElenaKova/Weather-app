@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI';
+}
+
+@media (min-width: 375px) {
+    body {
+        padding: 0;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 576px) {
+    body {
+        padding: 2em 0;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 3em 5em;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        padding: 3em 10em;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        padding: 3em 20em;
+    }
+}
+
+.block {
+    margin: 110px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    padding: 1em;
+}
+
+hr{
+    border: 10px solid #6c31ff;
+    border-radius: 5px;
+}
+
+
+#a-city a {
+    text-decoration: none;
+    color: #6c31ff;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+a:before {
+    content: '';
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #6c31ff;
+    transition: 0.2s;
+    transform: scaleX(0);
+}
+
+a:hover:before {
+    transform: scaleX(1);
+}
+
+button {
+    float: left;
+}
+
+
+h1#city {
+    color: #6c31ff;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+#current-degree {
+    font-size: 60px;
+}
+
+span {
+    font-size: 10px;
+    float: top;
+}
+
+button.btn {
+    display: block;
+    border: 2px solid #6c31ff;
+    background: #6c31ff;
+    color: #fff;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background: #fff;
+    color: #6c31ff;
+    border: 2px solid #6c31ff;
+}
