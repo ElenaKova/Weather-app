@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <script src="https://kit.fontawesome.com/0faf11a43c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
-    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
@@ -24,6 +24,7 @@
         <div class="container my-3">
             <form class="enter-city">
                 <div class="col d-flex">
+                    <i class="icon fa-solid fa-location-dot fa-lg"></i>
                     <div class="py-1 d-flex flex-fill justify-content-start">
                         <input class="form-control input-lg" type="text" id="input-city" placeholder="Enter a city..">
                     </div>
@@ -38,85 +39,49 @@
         </div>
         <div class="container my-2 main ">
             <div class="row ">
-                <div class="col d-flex flex-column align-items-start mb-2">
+                <div class="col d-flex flex-column align-items-start mb-2 col-md-4">
                     <h1 id="city">Kyiv</h1>
-                    <p class="my-0" id="day-time">Thursday 15:27</p>
-                    <p class="my-0" id="type-weather">Clouds</p>
+                    <div class="my-0" id="day-time">Thursday 15:27</div>
+                    <div class="my-0" id="type-weather">Clouds</div>
                 </div>
-                <div class="col d-flex justify-content-center align-items-top" id="current-degree">
+                <div class="col d-flex justify-content-center align-items-top col-md-4" id="current-degree">
                     <div>
                         ☁️ 1<span class="align-text-top">℃</span>
                     </div>
                 </div>
-                <div class="col d-flex flex-column justify-content-end align-items-start mb-2">
-                    <div>
-                        <p class="my-0" id="precipitation">Precipitation: 100%</p>
-                    </div>
-                    <div>
-                        <p class="my-0" id="wind">Wind: 2km/h</p>
-                    </div>
+                <div class="col d-flex flex-column justify-content-end align-items-start mb-2 col-md-4">
+                    <div class="my-0" id="precipitation">Precipitation: 100%</div>
+                    <div class="my-0" id="wind">Wind: 2km/h</div>
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="container d-flex flex-row justify-content-center">
-            <!-- <div class="d-flex flex-row justify-content-center"> -->
-                <div class="col">
-                    <div>
-                        <p id="day-of-week">Fri</p>
-                    </div>
-                    <div>
-                        <p id="emoji">☁️</p>
-                    </div>
-                    <div>
-                        <p id="degree">2℃</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <p id="day-of-week">Sat</p>
-                    </div>
-                    <div>
-                        <p id="emoji">☁️</p>
-                    </div>
-                    <div>
-                        <p id="degree">1℃</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <p id="day-of-week">Sun</p>
-                    </div>
-                    <div>
-                        <p id="emoji">☁️</p>
-                    </div>
-                    <div>
-                        <p id="degree">1℃</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <p id="day-of-week">Mon</p>
-                    </div>
-                    <div>
-                        <p id="emoji">☁️</p>
-                    </div>
-                    <div>
-                        <p id="degree">3℃</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div>
-                        <p id="day-of-week">Thu</p>
-                    </div>
-                    <div>
-                        <p id="emoji">🌨</p>
-                    </div>
-                    <div>
-                        <p id="degree">2℃</p>
-                    </div>
-                </div>
-            <!-- </div> -->
+        <hr class="line">
+        <div class="container d-flex flex-row justify-content-center my-3">
+            <div class="box-day col d-flex flex-column align-items-center ">
+                <div id="day-of-week">Fri</div>
+                <div id="emoji">☁️</div>
+                <div id="degree">2℃</div>
+            </div>
+            <div class="box-day col d-flex flex-column align-items-center ">
+                <div id="day-of-week">Sat</div>
+                <div id="emoji">☁️</div>
+                <div id="degree">1℃</div>
+            </div>
+            <div class="box-day col d-flex flex-column align-items-center">
+                <div id="day-of-week">Sun</div>
+                <div id="emoji">☁️</div>
+                <div id="degree">1℃</div>
+            </div>
+            <div class="box-day col d-flex flex-column align-items-center">
+                <div id="day-of-week">Mon</div>
+                <div id="emoji">☁️</div>
+                <div id="degree">3℃</div>
+            </div>
+            <div class="box-day col d-flex flex-column align-items-center">
+                <div id="day-of-week">Thu</div>
+                <div id="emoji">🌨</div>
+                <div id="degree">2℃</div>
+            </div>
         </div>
     </div>
 

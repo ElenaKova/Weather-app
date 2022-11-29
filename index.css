@@ -41,9 +41,13 @@ body {
     padding: 1em;
 }
 
-hr{
-    border: 10px solid #6c31ff;
+.line {
+    width: 100%;
+    height: 5px;
+    border: 0 none;
     border-radius: 5px;
+    background-color: #6c31ff;
+    opacity: .5;
 }
 
 
@@ -65,10 +69,28 @@ a:before {
     background-color: #6c31ff;
     transition: 0.2s;
     transform: scaleX(0);
+    opacity: 0.5;
 }
 
 a:hover:before {
     transform: scaleX(1);
+}
+
+.enter-city {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: calc(50%);
+    left: 1rem;
+}
+
+.enter-city label,
+.enter-city .form-control {
+    left: .5rem;
+    padding-left: 3rem;
+
 }
 
 button {
@@ -105,7 +127,51 @@ button.btn {
 }
 
 button.btn:hover {
-    background: #fff;
-    color: #6c31ff;
+    background: #6c31ff;
+    color: #fff;
     border: 2px solid #6c31ff;
+    opacity: .6;
+}
+
+#day-time {
+    opacity: .7;
+}
+
+#type-weather {
+    opacity: .7;
+}
+
+
+
+#precipitation {
+    opacity: .7;
+}
+
+#wind {
+    opacity: .7;
+}
+
+.border-success {
+    --bs-border-opacity: 1;
+    border-color: #6c31ff !important
+}
+
+#day-of-week {
+    font-size: 20px;
+    opacity: .7;
+}
+
+#emoji {
+    font-size: 35px;
+}
+
+#degree {
+    font-size: 16px;
+}
+
+.box-day {
+    border: 1.3px solid rgb(108, 49, 255, .3);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
 }
