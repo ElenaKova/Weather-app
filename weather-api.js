@@ -1,4 +1,3 @@
-import axios from "axios";
 
 function displayWeather(response) {
     document.querySelector("#city").innerHTML = response.data.name;
@@ -35,4 +34,4 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current_city");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("New York");
+searchCity("Kyiv");
