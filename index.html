@@ -2,67 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
     <script src="https://kit.fontawesome.com/0faf11a43c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
+    <!-- <link href="index.js"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
     <div class="block">
         <div class="container city" id="a-city">
             <div class="d-flex justify-content-start">
-                <div><a class="col " href="#">Kyiv</a></div>
+                <div><a class="col" href="#">Kyiv</a></div>
                 <div><a class="col mx-2" href="#">Roma</a></div>
                 <div><a class="col mx-1" href="#">Madrid</a></div>
             </div>
         </div>
         <div class="container my-3">
-            <form class="enter-city">
+            <form class="enter-city" id="enter_city">
                 <div class="col d-flex">
                     <i class="icon fa-solid fa-location-dot fa-lg"></i>
                     <div class="py-1 d-flex flex-fill justify-content-start">
-                        <input class="form-control input-lg" type="text" id="input-city" placeholder="Enter a city..">
+                        <input class="form-control input-lg" type="text" id="input-city" placeholder="Enter a city.." />
                     </div>
                     <div class="py-1 px-2 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn py-1 px-2">Search</button>
+                        <button type="submit" class="btn py-1 px-2" id="search">
+                            Search
+                        </button>
                     </div>
                     <div class="py-1 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn py-1 px-2">Current</button>
+                        <button type="submit" class="btn py-1 px-2" id="current_city">
+                            Current
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="container my-2 main ">
-            <div class="row ">
+        <div class="container my-2 main">
+            <div class="row">
                 <div class="col d-flex flex-column align-items-start mb-2 col-md-4">
                     <h1 id="city">Kyiv</h1>
-                    <div class="my-0" id="day-time">Thursday 15:27</div>
+                    <div class="my-0" id="day-time"></div>
                     <div class="my-0" id="type-weather">Clouds</div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-top col-md-4" id="current-degree">
                     <div>
-                        ☁️ 1<span class="align-text-top">℃</span>
+                        <span class="big-emoji-weather" id="big-emoji-weather">☁️</span>
+                        <span class="temperature" id="temperature"> </span>
+                        <span class="units">
+                            <a href="#" id="celsius">°C</a>
+                        </span>
+                        <span class="units">
+                            <a href="#" id="fahrenheit">°F</a>
+                        </span>
+                        <!-- ☁️ 1<span class="align-text-top">℃</span> -->
                     </div>
                 </div>
                 <div class="col d-flex flex-column justify-content-end align-items-start mb-2 col-md-4">
-                    <div class="my-0" id="precipitation">Precipitation: 100%</div>
-                    <div class="my-0" id="wind">Wind: 2km/h</div>
+                    <div class="my-0">Humidity: <span id="humidity"></span>%</div>
+                    <div class="my-0">Wind: <span id="wind"></span> km/h</div>
                 </div>
             </div>
         </div>
-        <hr class="line">
+        <hr class="line" />
         <div class="container d-flex flex-row justify-content-center my-3">
-            <div class="box-day col d-flex flex-column align-items-center ">
+            <div class="box-day col d-flex flex-column align-items-center">
                 <div id="day-of-week">Fri</div>
                 <div id="emoji">☁️</div>
                 <div id="degree">2℃</div>
             </div>
-            <div class="box-day col d-flex flex-column align-items-center ">
+            <div class="box-day col d-flex flex-column align-items-center">
                 <div id="day-of-week">Sat</div>
                 <div id="emoji">☁️</div>
                 <div id="degree">1℃</div>
@@ -84,7 +98,9 @@
             </div>
         </div>
     </div>
-
+    <script src="index.js"></script>
+    <script src="weather-api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </body>
 
 </html>

@@ -108,6 +108,39 @@ h1#city {
     font-size: 60px;
 }
 
+.temperature {
+    color: rgb(33, 33, 33);
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.big-emoji-weather {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.units {
+    position: relative;
+    top: -34px;
+
+}
+
+#celsius {
+    font-size: 16px;
+    text-decoration: none;
+    color: #6c31ff;
+    transform: none;
+}
+
+#fahrenheit {
+    font-size: 16px;
+    text-decoration: none;
+    color: #6c31ff;
+    transform: none;
+}
+
 span {
     font-size: 10px;
     float: top;
