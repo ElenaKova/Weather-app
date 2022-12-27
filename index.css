@@ -128,21 +128,21 @@ h1#city {
 }
 
 #celsius {
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     color: #6c31ff;
     transform: none;
 }
 
 #fahrenheit {
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     color: #6c31ff;
     transform: none;
 }
 
 span {
-    font-size: 10px;
+    font-size: 15px;
     float: top;
 }
 
@@ -176,13 +176,17 @@ button.btn:hover {
 
 
 
-#precipitation {
+.humidity {
     opacity: .7;
 }
 
-#wind {
+.wind {
     opacity: .7;
 }
+
+/* #humidity{
+
+} */
 
 .border-success {
     --bs-border-opacity: 1;
