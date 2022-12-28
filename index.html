@@ -43,12 +43,12 @@
         </div>
         <div class="container my-2 main">
             <div class="row">
-                <div class="col d-flex flex-column align-items-start mb-2 col-md-4">
+                <div class="col-6 d-flex flex-column align-items-start mb-2 col-md-4">
                     <h1 id="city">Kyiv</h1>
                     <div class="my-0" id="day-time"></div>
                     <div class="my-0" id="type-weather"></div>
                 </div>
-                <div class="col d-flex justify-content-center align-items-top col-md-4" id="current-degree">
+                <div class="col-lg-4 d-flex justify-content-center align-items-top col-md-4" id="current-degree">
                     <div>
                         <span class="big-emoji-weather" id="big-emoji-weather">☁️</span>
                         <span class="temperature" id="temperature"> </span>
@@ -61,7 +61,8 @@
                         <!-- ☁️ 1<span class="align-text-top">℃</span> -->
                     </div>
                 </div>
-                <div class="col d-flex flex-column justify-content-end align-items-start mb-2 col-md-4">
+                <div class="col-6 d-flex flex-column justify-content-end align-items-start mb-2 col-md-4">
+                    <div class="my-0 precipitation">Precipitation: <span id="precipitation"></span>%</div>
                     <div class="my-0 humidity">Humidity: <span id="humidity"></span>%</div>
                     <div class="my-0 wind">Wind: <span id="wind"></span> km/h</div>
                 </div>
@@ -95,6 +96,9 @@
                 <div id="degree">2℃</div>
             </div>
         </div>
+        <small>
+            <a href="https://github.com/ElenaKova/Weather-app" target="_blank">Open-source code</a> by Elena Kovalenko
+        </small>
     </div>
     <script src="/src/app.js"></script>
     <script src="/src/weather-api.js"></script>
