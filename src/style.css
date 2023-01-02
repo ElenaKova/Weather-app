@@ -124,7 +124,6 @@ h1#city {
 .units {
     position: relative;
     top: -34px;
-
 }
 
 #celsius {
@@ -170,7 +169,7 @@ button.btn:hover {
     opacity: .7;
 }
 
-#type-weather {
+#description{
     opacity: .7;
 }
 
