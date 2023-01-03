@@ -48,22 +48,30 @@
 // }
 
 function displayWeather(response) {
-    console.log(response.data);
-    document.querySelector("#city").innerHTML = response.data.name;
-    document.querySelector("#temperature").innerHTML = Math.round(
+    // console.log(response.data);
+    let cityElement = document.querySelector("#city");
+    let temperatureElement = document.querySelector("#temperature");
+    let feelsElement = document.querySelector("#feels");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let descriptionElement = document.querySelector("#description");
+    let iconElement = document.querySelector("icon");
+
+    cityElement.innerHTML = response.data.name;
+    temperatureElement.innerHTML = Math.round(
         response.data.main.temp
     );
-    document.querySelector("#feels").innerHTML = Math.round(
+
+    feelsElement.innerHTML = Math.round(
         response.data.main.feels_like
     );
-    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    document.querySelector("#wind").innerHTML = Math.round(
+    humidityElement.innerHTML = response.data.main.humidity;
+    windElement.innerHTML = Math.round(
         response.data.wind.speed
     );
+    descriptionElement.innerHTML =
+        response.data.weather[0].description;
 
-    document.querySelector("#description").innerHTML =
-        response.data.weather[0].main;
-    let iconElement = document.querySelector("icon");
     // iconElement.setAttribute("src", `http://openweathermap.org/img/wn/10d@2x.png`);
 
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -89,6 +97,15 @@ function searchLocation(position) {
 
     axios.get(url).then(displayWeather);
 }
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#input-city");
+    searchCity(cityInputElement.value);
+}
+
+let form = document.querySelector("#enter_city");
+form.addEventListener("submit", handleSubmit);
 
 function getCurrentLocation(event) {
     event.preventDefault();
