@@ -51,7 +51,7 @@ body {
 }
 
 
-#a-city a {
+.city .style-a {
     text-decoration: none;
     color: #6c31ff;
     font-size: 15px;
@@ -59,7 +59,7 @@ body {
     position: relative;
 }
 
-a:before {
+.city .style-a:before {
     content: '';
     bottom: 0;
     left: 0;
@@ -72,7 +72,7 @@ a:before {
     opacity: 0.5;
 }
 
-a:hover:before {
+.city .style-a:hover:before {
     transform: scaleX(1);
 }
 
@@ -110,7 +110,7 @@ h1#city {
 
 .temperature {
     color: rgb(33, 33, 33);
-    font-size: 64px;
+    font-size: 58px;
     font-weight: 400;
     line-height: 1;
 }
@@ -121,23 +121,31 @@ h1#city {
     line-height: 1;
 }
 
-.units {
+
+.weather-temperature img {
+    margin-top: 5px;
+    height: 64px;
+    width: 64px;
+}
+
+.weather-temperature .units {
+    font-size: 15px;
     position: relative;
+    /* text-decoration: none; */
     top: -34px;
+    color: #000;
+    /* transform: none; */
 }
 
-#celsius {
-    font-size: 15px;
-    text-decoration: none;
+.weather-temperature .active {
+    /* color: #000; */
     color: #6c31ff;
-    transform: none;
+    cursor: default;
+    text-decoration: none;
 }
 
-#fahrenheit {
-    font-size: 15px;
+.weather-temperature .active:hover {
     text-decoration: none;
-    color: #6c31ff;
-    transform: none;
 }
 
 span {
@@ -169,7 +177,7 @@ button.btn:hover {
     opacity: .7;
 }
 
-#description{
+#description {
     opacity: .7;
 }
 
