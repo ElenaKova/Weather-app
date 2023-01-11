@@ -8,6 +8,8 @@ function displayWeather(response) {
     let descriptionElement = document.querySelector("#description");
     let iconElement = document.querySelector("icon");
 
+    displayForecast();
+
     celsiusTemp = response.data.main.temp;
 
     cityElement.innerHTML = response.data.name;
@@ -87,12 +89,57 @@ function displayCelsiusTemp(event) {
 
 let celsiusTemp = null;
 
+displayForecast();
+
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp)
 searchCity("Milan");
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = "";
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML + 
+        `
+        <div class="box-day container mx-1 ">
+            <div class = "day-of-week align-items-center" > ${day}</div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png"
+                    alt=""
+                    width="42"/>
+                <div class="weather-forecast-temp">
+                        <span class="weather-forecast-temp-max">18˚</span>
+                        <span class = "weather-forecast-temp-min" > 13˚ </span>
+                </div>
+            </div>
+        </div>
+    `;
+    })
+
+    // forecastHTML = forecastHTML + `</div>`
+    forecastElement.innerHTML = forecastHTML;
+}
+// forecastElement.innerHTML = `
+// <div div class = "container d-flex flex-column justify-content-center my-3" >
+//     <div class = "day-of-week align-items-center" > Fri </div>
+//         <img src="http://openweathermap.org/img/wn/50d@2x.png"
+//         alt=""
+//         width="42"/>
+//         <div class="weather-forecast-temp">
+//             <span class="weather-forecast-temp-max">18˚</span>
+//             <span class = "weather-forecast-temp-mim" > 13˚ </span>
+//         </div>
+//     </div>
+// </div>
+// `;
+
+
+
+
 
 // function convertToFahrenheit(event) {
 //     event.preventDefault();

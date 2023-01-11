@@ -202,22 +202,51 @@ button.btn:hover {
     border-color: #6c31ff !important
 }
 
-#day-of-week {
-    font-size: 20px;
-    opacity: .7;
-}
 
-#emoji {
+
+/* #emoji {
     font-size: 35px;
-}
+} */
 
-#degree {
+/* #degree {
     font-size: 16px;
+} */
+
+.weather-forecast {
+    display: inline-flex;
+    flex-wrap: nowrap;
 }
 
 .box-day {
+    text-align: center;
+    color: #000;
     border: 1.3px solid rgb(108, 49, 255, .3);
     border-radius: 5px;
     padding: 10px;
     margin: 0 5px;
+}
+
+.day-of-week {
+    /* color: #6c31ff; */
+    font-size: 16px;
+    opacity: .7;
+}
+
+.day-of-week img {
+    margin-right: 5px;
+    height: 64px;
+    width: 64px;
+}
+
+/* .weather-forecast-date {
+    font-size: 16px;
+    opacity: 0.5;
+} */
+
+.weather-forecast-temp-min {
+    opacity: 0.5;
+}
+
+.weather-forecast-temp {
+    font-size: 16px;
 }
