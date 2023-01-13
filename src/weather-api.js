@@ -1,3 +1,5 @@
+// import axios from "axios";
+
 function displayWeather(response) {
     // console.log(response.data);
     let cityElement = document.querySelector("#city");
@@ -6,7 +8,7 @@ function displayWeather(response) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let descriptionElement = document.querySelector("#description");
-    let iconElement = document.querySelector("icon");
+    let iconElement = document.querySelector("#icon");
 
     displayForecast();
 
@@ -28,11 +30,18 @@ function displayWeather(response) {
     descriptionElement.innerHTML =
         response.data.weather[0].description;
 
-    // iconElement.setAttribute("src", `http://openweathermap.org/img/wn/10d@2x.png`);
-
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
+
+    getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let key = "98ad498c7ac36eb42f7e339359135880";
+    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
+    axios.get(url).then(displayForecast);
 }
 
 function searchCity(city) {
@@ -96,7 +105,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp)
-searchCity("Milan");
+searchCity("Kyiv");
 
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
@@ -104,8 +113,8 @@ function displayForecast() {
     let forecastHTML = "";
     let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
     days.forEach(function (day) {
-        forecastHTML = forecastHTML + 
-        `
+        forecastHTML = forecastHTML +
+            `
         <div class="box-day container mx-1 ">
             <div class = "day-of-week align-items-center" > ${day}</div>
                 <img src="http://openweathermap.org/img/wn/50d@2x.png"
@@ -122,36 +131,4 @@ function displayForecast() {
 
     // forecastHTML = forecastHTML + `</div>`
     forecastElement.innerHTML = forecastHTML;
-}
-// forecastElement.innerHTML = `
-// <div div class = "container d-flex flex-column justify-content-center my-3" >
-//     <div class = "day-of-week align-items-center" > Fri </div>
-//         <img src="http://openweathermap.org/img/wn/50d@2x.png"
-//         alt=""
-//         width="42"/>
-//         <div class="weather-forecast-temp">
-//             <span class="weather-forecast-temp-max">18˚</span>
-//             <span class = "weather-forecast-temp-mim" > 13˚ </span>
-//         </div>
-//     </div>
-// </div>
-// `;
-
-
-
-
-
-// function convertToFahrenheit(event) {
-//     event.preventDefault();
-//     let temperatureElement = document.querySelector("#temperature");
-//     temperatureElement.innerHTML = 66;
-// }
-
-// function convertToCelsius(event) {
-//     event.preventDefault();
-//     let temperatureElement = document.querySelector("#temperature");
-//     temperatureElement.innerHTML = 19;
-// }
-
-// let fahrenheitLink = document.querySelector("#fahrenheit");
-// fahrenheitLink.addEventListener("click", convertToFahrenheit);
+};

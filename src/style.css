@@ -204,14 +204,6 @@ button.btn:hover {
 
 
 
-/* #emoji {
-    font-size: 35px;
-} */
-
-/* #degree {
-    font-size: 16px;
-} */
-
 .weather-forecast {
     display: inline-flex;
     flex-wrap: nowrap;
@@ -223,7 +215,7 @@ button.btn:hover {
     border: 1.3px solid rgb(108, 49, 255, .3);
     border-radius: 5px;
     padding: 10px;
-    margin: 0 5px;
+    margin: 0 15px;
 }
 
 .day-of-week {
