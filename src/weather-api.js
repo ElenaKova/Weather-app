@@ -88,7 +88,7 @@ function searchLocation(position) {
     // let key = "bfbe44236o410d8ab668t52c259a3289";
     // let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${key}&units=metric`;
-api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
+
     axios.get(url).then(displayWeather);
 }
 
