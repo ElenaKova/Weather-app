@@ -1,9 +1,9 @@
 body {
     font-family: 'Segoe UI';
-    background: linear-gradient(120deg, #fff5eb, #ffdec9);
+    background: linear-gradient(120deg, #fff5eb, #5f0bfcad);
 
     color: #fff;
-    /* width: 100%; */
+    width: 100%;
     min-height: 100vh;
 }
 
@@ -137,6 +137,9 @@ h1#city {
 
 #current-degree {
     font-size: 60px;
+    /* background-color:#6c31ff; */
+    border: 2px solid rgb(108, 49, 255, .3);
+    border-radius: 5px;
 }
 
 .temperature {
@@ -163,14 +166,14 @@ h1#city {
     font-size: 15px;
     position: relative;
     /* text-decoration: none; */
-    top: -34px;
+    top: -20px;
     color: #000;
     /* transform: none; */
 }
 
 .weather-temperature .active {
     /* color: #000; */
-    color: #6c31ff;
+    color: #000;
     cursor: default;
     text-decoration: none;
 }
