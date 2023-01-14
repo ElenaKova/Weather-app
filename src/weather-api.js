@@ -7,23 +7,22 @@ function getForecast(coordinates) {
     axios.get(url).then(displayForecast);
 }
 
-function displayForecast(response) {
-    let forecast = response.data.daily;
+function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = "";
-    // let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-    forecast.forEach(function (forecastDay) {
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+    days.forEach(function (day) {
         forecastHTML = forecastHTML +
             `
         <div class="box-day container mx-1 ">
-            <div class = "day-of-week align-items-center" >${forecastDay.dt}</div>
-                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+            <div class = "day-of-week align-items-center" > ${day}</div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png"
                     alt=""
                     width="42"/>
                 <div class="weather-forecast-temp">
-                        <span class="weather-forecast-temp-max">${forecastDay.temp.max}˚</span>
-                        <span class = "weather-forecast-temp-min" > ${forecastDay.temp.min}˚ </span>
+                        <span class="weather-forecast-temp-max">18˚</span>
+                        <span class = "weather-forecast-temp-min" > 13˚ </span>
                 </div>
             </div>
         </div>
@@ -71,9 +70,8 @@ function displayWeather(response) {
     getForecast(response.data.coord);
 }
 
-
 function searchCity(city) {
-    let key = "98ad498c7ac36eb42f7e339359135880";
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
     // let key = "bfbe44236o410d8ab668t52c259a3289";
     // let url = `https://api.shecodes.io/weather/v1/current?query={city}&key={key}`;
 
@@ -81,9 +79,8 @@ function searchCity(city) {
     axios.get(url).then(displayWeather);
 }
 
-
 function searchLocation(position) {
-    let key = "98ad498c7ac36eb42f7e339359135880";
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
 
     // let key = "bfbe44236o410d8ab668t52c259a3289";
     // let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
@@ -108,6 +105,7 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current_city");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
 // function displayFahrenheitTemp(event) {
 //     event.preventDefault();
 //     celsiusLink.classList.remove("active");
@@ -116,6 +114,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 //     let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
 //     tempElement.innerHTML = Math.round(fahrenheitTemp);
 // }
+
 
 function displayCelsiusTemp(event) {
     event.preventDefault();
