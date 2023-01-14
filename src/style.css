@@ -1,5 +1,10 @@
 body {
     font-family: 'Segoe UI';
+    background: linear-gradient(120deg, #fff5eb, #ffdec9);
+
+    color: #fff;
+    /* width: 100%; */
+    min-height: 100vh;
 }
 
 @media (min-width: 375px) {
@@ -7,11 +12,21 @@ body {
         padding: 0;
         margin: 10px 0;
     }
+
+    content {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 576px) {
     body {
         padding: 2em 0;
+    }
+
+    content {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -19,11 +34,21 @@ body {
     body {
         padding: 3em 5em;
     }
+
+    content {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 992px) {
     body {
         padding: 3em 10em;
+    }
+
+    content {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -34,11 +59,12 @@ body {
 }
 
 .block {
-    margin: 110px 0;
+    /* margin: 110px 0; */
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #000;
+    /* border: 3px solid #9dbeff; */
     padding: 1em;
+    background: #fff;
 }
 
 .line {
@@ -47,7 +73,7 @@ body {
     border: 0 none;
     border-radius: 5px;
     background-color: #6c31ff;
-    opacity: .5;
+    /* opacity: .5; */
 }
 
 
@@ -78,6 +104,11 @@ body {
 
 .enter-city {
     position: relative;
+}
+
+.weather-temperature {
+    display: flex;
+    align-items: center;
 }
 
 .icon {
@@ -193,16 +224,11 @@ button.btn:hover {
     opacity: .7;
 }
 
-/* #humidity{
-
-} */
 
 .border-success {
     --bs-border-opacity: 1;
     border-color: #6c31ff !important
 }
-
-
 
 .weather-forecast {
     display: inline-flex;
