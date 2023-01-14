@@ -1,46 +1,7 @@
 // import axios from "axios";
 
-function formatDate(date) {
-    let hours = date.getHours();
-    if (hours < 10) {
-        hours = `0${hours}`;
-    }
-    let minutes = date.getMinutes();
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-    }
-
-    let dayIndex = date.getDay();
-    let days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    ];
-    let day = days[dayIndex];
-
-    return `${day} ${hours}:${minutes}`;
-}
-
-let currentDayTime = document.querySelector("#day-time");
-let time = new Date();
-currentDayTime.innerHTML = formatDate(time);
-
-//
-
-
-function getForecast(coordinates) {
-    console.log(coordinates);
-    let key = "eb9542c65e739e0fb25ade97c749e2aa";
-    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
-    console.log(url);
-    // axios.get(url).then(displayForecast);
-}
-
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = "";
@@ -66,8 +27,15 @@ function displayForecast() {
     forecastElement.innerHTML = forecastHTML;
 };
 
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
+    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
+    // console.log(url);
+    axios.get(url).then(displayForecast);
+}
+
 function displayWeather(response) {
-    // console.log(response.data);
     let cityElement = document.querySelector("#city");
     let temperatureElement = document.querySelector("#temperature");
     let feelsElement = document.querySelector("#feels");
@@ -75,8 +43,6 @@ function displayWeather(response) {
     let windElement = document.querySelector("#wind");
     let descriptionElement = document.querySelector("#description");
     let iconElement = document.querySelector("#icon");
-
-    displayForecast();
 
     celsiusTemp = response.data.main.temp;
 
@@ -124,8 +90,6 @@ function handleSubmit(event) {
     searchCity(cityInputElement.value);
 }
 
-let form = document.querySelector("#enter_city");
-form.addEventListener("submit", handleSubmit);
 
 function getCurrentLocation(event) {
     event.preventDefault();
@@ -153,7 +117,8 @@ function displayCelsiusTemp(event) {
 
 let celsiusTemp = null;
 
-displayForecast();
+let form = document.querySelector("#enter_city");
+form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
