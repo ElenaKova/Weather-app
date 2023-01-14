@@ -1,4 +1,37 @@
 // import axios from "axios";
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
+    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
+    console.log(url);
+    axios.get(url).then(displayForecast);
+}
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = "";
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML +
+            `
+        <div class="box-day container mx-1 ">
+            <div class = "day-of-week align-items-center" > ${day}</div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png"
+                    alt=""
+                    width="42"/>
+                <div class="weather-forecast-temp">
+                        <span class="weather-forecast-temp-max">18˚</span>
+                        <span class = "weather-forecast-temp-min" > 13˚ </span>
+                </div>
+            </div>
+        </div>
+    `;
+    })
+
+    // forecastHTML = forecastHTML + `</div>`
+    forecastElement.innerHTML = forecastHTML;
+};
 
 function displayWeather(response) {
     // console.log(response.data);
@@ -37,15 +70,8 @@ function displayWeather(response) {
     getForecast(response.data.coord);
 }
 
-function getForecast(coordinates) {
-    console.log(coordinates);
-    let key = "98ad498c7ac36eb42f7e339359135880";
-    let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
-    axios.get(url).then(displayForecast);
-}
-
 function searchCity(city) {
-    let key = "98ad498c7ac36eb42f7e339359135880";
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
     // let key = "bfbe44236o410d8ab668t52c259a3289";
     // let url = `https://api.shecodes.io/weather/v1/current?query={city}&key={key}`;
 
@@ -54,7 +80,7 @@ function searchCity(city) {
 }
 
 function searchLocation(position) {
-    let key = "98ad498c7ac36eb42f7e339359135880";
+    let key = "eb9542c65e739e0fb25ade97c749e2aa";
 
     // let key = "bfbe44236o410d8ab668t52c259a3289";
     // let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
@@ -80,14 +106,14 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current_city");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-function displayFahrenheitTemp(event) {
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let tempElement = document.querySelector("#temperature");
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
+// function displayFahrenheitTemp(event) {
+//     event.preventDefault();
+//     celsiusLink.classList.remove("active");
+//     fahrenheitLink.classList.add("active");
+//     let tempElement = document.querySelector("#temperature");
+//     let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+//     tempElement.innerHTML = Math.round(fahrenheitTemp);
+// }
 
 
 function displayCelsiusTemp(event) {
@@ -103,32 +129,6 @@ displayForecast();
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp)
-searchCity("Kyiv");
-
-function displayForecast() {
-    let forecastElement = document.querySelector("#forecast");
-
-    let forecastHTML = "";
-    let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-    days.forEach(function (day) {
-        forecastHTML = forecastHTML +
-            `
-        <div class="box-day container mx-1 ">
-            <div class = "day-of-week align-items-center" > ${day}</div>
-                <img src="http://openweathermap.org/img/wn/50d@2x.png"
-                    alt=""
-                    width="42"/>
-                <div class="weather-forecast-temp">
-                        <span class="weather-forecast-temp-max">18˚</span>
-                        <span class = "weather-forecast-temp-min" > 13˚ </span>
-                </div>
-            </div>
-        </div>
-    `;
-    })
-
-    // forecastHTML = forecastHTML + `</div>`
-    forecastElement.innerHTML = forecastHTML;
-};
+// let fahrenheitLink = document.querySelector("#fahrenheit");
+// fahrenheitLink.addEventListener("click", displayFahrenheitTemp)
+// searchCity("Kyiv");
