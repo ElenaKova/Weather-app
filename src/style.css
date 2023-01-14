@@ -165,14 +165,15 @@ h1#city {
 .weather-temperature .units {
     font-size: 15px;
     position: relative;
-    /* text-decoration: none; */
     top: -20px;
-    color: #000;
-    /* transform: none; */
+
+}
+
+.weather-temperature a {
+    text-decoration: none;
 }
 
 .weather-temperature .active {
-    /* color: #000; */
     color: #000;
     cursor: default;
     text-decoration: none;
@@ -213,6 +214,10 @@ button.btn:hover {
 
 #description {
     opacity: .7;
+}
+
+#description::first-letter {
+    text-transform: capitalize;
 }
 
 .precipitation {
