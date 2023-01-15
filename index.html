@@ -47,12 +47,13 @@
         </div>
         <div class="container my-2 main">
             <div class="row content">
-                <div class="col-6 d-flex flex-column align-items-start mb-2 col-md-4">
+                <div class="col-xl-4 col-md-3  d-flex flex-column justify-content-center align-items-start mb-2 ">
                     <h1 id="city">Kyiv</h1>
                     <div class="my-0" id="day-time"></div>
                     <div class="my-0" id="description"></div>
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center align-items-top col-md-4" id="current-degree">
+                <div class="col-xl-4 col-md-6 d-flex justify-content-center align-items-top mb-2"
+                    id="current-degree">
                     <div class="clearfix weather-temperature">
                         <img src="" alt="Clear" id="icon" />
                         <!-- <span class="big-emoji-weather" id="big-emoji-weather">☁️</span> -->
@@ -63,7 +64,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-6 d-flex flex-column justify-content-center align-items-end mb-2 col-md-4">
+                <div class="col-xl-4 col-md-3 d-flex flex-column justify-content-end align-items-end mb-2">
                     <div class="my-0 precipitation">Feels like: <span id="feels"></span>℃</div>
                     <div class="my-0 humidity">Humidity: <span id="humidity"></span>%</div>
                     <div class="my-0 wind">Wind: <span id="wind"></span> km/h</div>
@@ -71,46 +72,17 @@
             </div>
         </div>
         <hr class="line" />
-        <!-- <div class="container d-flex flex-row"> -->
         <div class="container d-flex justify-content-center">
-            <div class="weather-forecast" id="forecast"></div>
+            <div class="weather-forecast d-flex" id="forecast"></div>
         </div>
-
-        <!-- <div class="container d-flex flex-row justify-content-center my-3" id="forecast"> -->
-
-        <!-- <div class="box-day col d-flex flex-column align-items-center">
-                <div id="day-of-week">Fri</div>
-                <div id="emoji">☁️</div>
-                <div id="degree">2℃</div>
-            </div>
-            <div class="box-day col d-flex flex-column align-items-center">
-                <div id="day-of-week">Sat</div>
-                <div id="emoji">☁️</div>
-                <div id="degree">1℃</div>
-            </div>
-            <div class="box-day col d-flex flex-column align-items-center">
-                <div id="day-of-week">Sun</div>
-                <div id="emoji">☁️</div>
-                <div id="degree">1℃</div>
-            </div>
-            <div class="box-day col d-flex flex-column align-items-center">
-                <div id="day-of-week">Mon</div>
-                <div id="emoji">☁️</div>
-                <div id="degree">3℃</div>
-            </div>
-            <div class="box-day col d-flex flex-column align-items-center">
-                <div id="day-of-week">Thu</div>
-                <div id="emoji">🌨</div>
-                <div id="degree">2℃</div>
-            </div> -->
     </div>
     <small>
         <a href="https://github.com/ElenaKova/Weather-app" target="_blank">Open-source code</a> by Elena Kovalenko
     </small>
     <script src="/src/app.js"></script>
     <script src="/src/weather-api.js"></script>
+    <script src="/src/forecast-carousel.js"></script>
     <script src="https://kit.fontawesome.com/0faf11a43c.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>

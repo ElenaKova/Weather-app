@@ -53,9 +53,8 @@ function displayForecast(response) {
         if (idx < 7) {
             forecastHTML = forecastHTML +
                 `
-        <div class="box-day container mx-1 ">
-            <div class = "day-of-week align-items-center" > ${formatDay(forecastDay.dt)}</div>
-
+        <div class="box-day container mx-2 my-1 ">
+            <div class = "day-of-week px-3 py-1 align-items-center" > ${formatDay(forecastDay.dt)}</div>
                 <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                     alt=""
                     width="42"/>

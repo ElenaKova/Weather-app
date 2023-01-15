@@ -1,65 +1,51 @@
 body {
     font-family: 'Segoe UI';
     background: linear-gradient(120deg, #fff5eb, #5f0bfcad);
-
     color: #fff;
     width: 100%;
     min-height: 100vh;
 }
 
-@media (min-width: 375px) {
+
+@media (max-width: 576px) {
     body {
-        padding: 0;
+        padding: 2em 1em;
         margin: 10px 0;
     }
 
-    content {
-        display: flex;
-        justify-content: center;
+    .weather-forecast {
+        flex-wrap: wrap;
     }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 768px) {
     body {
-        padding: 2em 0;
+        padding: 2em 1em;
     }
 
-    content {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 768px) {
-    body {
-        padding: 3em 5em;
-    }
-
-    content {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 992px) {
-    body {
-        padding: 3em 10em;
-    }
-
-    content {
-        display: flex;
-        justify-content: center;
+    .weather-forecast {
+        flex-wrap: wrap;
     }
 }
 
 @media (min-width: 1200px) {
     body {
-        padding: 3em 20em;
+        padding: 5em 15em;
     }
 }
 
+@media (max-width: 1200px) {
+    body {
+        padding: 2em 2em;
+    }
+}
+
+/* .content {
+    display: flex;
+    flex-wrap: nowrap;
+} */
+
 .block {
-    /* margin: 110px 0; */
     display: flex;
     flex-wrap: wrap;
     /* border: 3px solid #9dbeff; */
@@ -138,8 +124,8 @@ h1#city {
 #current-degree {
     font-size: 60px;
     /* background-color:#6c31ff; */
-    border: 2px solid rgb(108, 49, 255, .3);
-    border-radius: 5px;
+    /* border: 2px solid rgb(108, 49, 255, .3); */
+    /* border-radius: 5px; */
 }
 
 .temperature {
@@ -171,6 +157,7 @@ h1#city {
 
 .weather-temperature a {
     text-decoration: none;
+    color: #6c31ff;
 }
 
 .weather-temperature .active {
@@ -238,9 +225,13 @@ button.btn:hover {
     border-color: #6c31ff !important
 }
 
+/* footer{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
 .weather-forecast {
-    display: inline-flex;
-    flex-wrap: nowrap;
+    display: flex;
 }
 
 .box-day {
@@ -250,6 +241,7 @@ button.btn:hover {
     border-radius: 5px;
     padding: 10px;
     margin: 0 15px;
+    /* width: 50% !important; */
 }
 
 .day-of-week {
