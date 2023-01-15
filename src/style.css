@@ -24,6 +24,11 @@ body {
         margin: 8px 0;
     }
 
+    .day-of-week img {
+        margin-right: 5px;
+        height: 84px;
+        width: 84px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -49,6 +54,10 @@ body {
 @media (min-width: 1200px) {
     body {
         padding: 5em 15em;
+    }
+
+    .weather-forecast {
+        flex-wrap: nowrap;
     }
 }
 
@@ -232,7 +241,6 @@ button.btn:hover {
     opacity: .7;
 }
 
-
 .border-success {
     --bs-border-opacity: 1;
     border-color: #6c31ff !important
@@ -263,16 +271,12 @@ button.btn:hover {
     opacity: .7;
 }
 
-.day-of-week img {
+/* .day-of-week img {
     margin-right: 5px;
     height: 64px;
     width: 64px;
-}
-
-/* .weather-forecast-date {
-    font-size: 16px;
-    opacity: 0.5;
 } */
+
 
 .weather-forecast-temp-min {
     opacity: 0.5;

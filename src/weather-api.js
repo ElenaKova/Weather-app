@@ -57,10 +57,10 @@ function displayForecast(response) {
             <div class = "day-of-week px-3 py-1 align-items-center" > ${formatDay(forecastDay.dt)}</div>
                 <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                     alt=""
-                    width="42"/>
+                    width="64"/>
                 <div class="weather-forecast-temp">
-                        <span class = "weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}˚</span>
-                        <span class = "weather-forecast-temp-min">${Math.round(forecastDay.temp.min)}˚</span>
+                        <span class = "weather-forecast-temp-max">Max: ${Math.round(forecastDay.temp.max)}˚</span><br>
+                        <span class = "weather-forecast-temp-min">Min: ${Math.round(forecastDay.temp.min)}˚</span>
                 </div>
             </div>
         </div>
