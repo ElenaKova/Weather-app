@@ -3,11 +3,12 @@
     --button-color: #fff;
     --border-box: rgb(108, 49, 255, .3);
     --black: rgb(33, 33, 33);
+    --light-black: rgba(33, 33, 33, 0.677);
 }
 
 body {
     font-family: 'Segoe UI';
-    background: linear-gradient(120deg, #fff5eb, #5f0bfcad);
+    background: linear-gradient(120deg, #ffb76f9c, #5f0bfc88);
     color: var(--button-color);
     width: 100%;
     min-height: 100vh;
@@ -55,15 +56,13 @@ body {
         width: 84px;
         height: 84px;
     }
-
-
 }
 
-/* @media (min-width: 992px) {
+@media (min-width: 992px) {
     main {
-        width: auto!important;
+        width: auto !important;
     }
-} */
+}
 
 @media (min-width: 1200px) {
     body {
@@ -87,6 +86,7 @@ body {
     /* border: 3px solid #9dbeff; */
     padding: 1em;
     background: var(--button-color);
+    box-shadow: 5px 5px 15px 1px var(--light-black);
 }
 
 
