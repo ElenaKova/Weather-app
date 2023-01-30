@@ -261,11 +261,6 @@ button.btn:hover {
     border-color: var(--main-color) !important;
 }
 
-/* footer{
-    display: flex;
-    flex-wrap: wrap;
-} */
-
 .weather-forecast {
     display: flex;
 }
@@ -281,20 +276,10 @@ button.btn:hover {
     justify-content: center;
 }
 
-/* .box-day img{
-    max-width: 50% !important;
-} */
 .day-of-week {
-    /* color: #6c31ff; */
     font-size: 16px;
     opacity: .7;
 }
-
-/* .day-of-week img {
-    margin-right: 5px;
-    height: 64px;
-    width: 64px;
-} */
 
 
 .weather-forecast-temp-min {
