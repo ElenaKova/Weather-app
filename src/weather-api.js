@@ -38,7 +38,6 @@ function formatDay(timestamp) {
         "Fri",
         "Sat"
     ]
-
     return days[day];
 }
 
@@ -48,14 +47,13 @@ function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = "";
-    // let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
     forecast.forEach(function (forecastDay, idx) {
         if (idx < 7) {
             forecastHTML = forecastHTML +
                 `
-        <div class = "box-day mx-2 my-1" >
-        <div class="row">
-            <div class = "col-sm px-3 py-1 day-of-week align-items-center " > ${
+        <div class = "box-day" >
+        <div class="container inner-box-day d-flex">
+            <div class = "col-sm day-of-week align-items-center " > ${
                 formatDay(forecastDay.dt)
             } </div>
                 <div><img class="img-fluid" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
@@ -72,14 +70,15 @@ function displayForecast(response) {
     `;
         }
     })
-
-    // forecastHTML = forecastHTML + `</div>`
     forecastElement.innerHTML = forecastHTML;
 };
 
 function getForecast(coordinates) {
     console.log(coordinates);
     let key = "eb9542c65e739e0fb25ade97c749e2aa";
+    // let key = "bfbe44236o410d8ab668t52c259a3289";
+    // let url2 = "https://api.shecodes.io/weather/v1/current?query={query}&key={key}";
+
     let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
     axios.get(url).then(displayForecast);
 }
@@ -119,12 +118,14 @@ function displayWeather(response) {
 
 function searchCity(city) {
     let key = "eb9542c65e739e0fb25ade97c749e2aa";
+    // let key = "bfbe44236o410d8ab668t52c259a3289";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
     axios.get(url).then(displayWeather);
 }
 
 function searchLocation(position) {
     let key = "eb9542c65e739e0fb25ade97c749e2aa";
+    // let key = "bfbe44236o410d8ab668t52c259a3289";
 
     // let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${key}&units=metric`;
@@ -174,5 +175,5 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp)
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 searchCity("Kyiv");

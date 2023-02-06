@@ -18,32 +18,30 @@
     <div class="block">
         <div class="container d-flex justify-content-center text-align-center ">
             <div>
-                <h1 class="my-0">Meteo</h1>
+                <!-- <h1 class="my-0">Meteo</h1> -->
             </div>
         </div>
         <div class="container my-2">
             <form class="enter-city" id="enter_city">
                 <div class="col d-flex">
                     <i class="icon fa-solid fa-location-dot fa-lg"></i>
-                    <div class="py-1 d-flex flex-fill justify-content-start">
+                    <div class="py-1 d-flex justify-content-start">
                         <input class="form-control input-lg" type="search" id="input-city" placeholder="Enter a city.."
                             autocomplete="off" />
                     </div>
                     <div class="py-1 px-2 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn py-1 px-2" id="search">
-                            Search
-                        </button>
+                        <button type="submit" class="btn py-1 px-2" id="search">Search</button>
                     </div>
-                    <div class="py-1 d-flex justify-content-center align-items-center">
-                        <button type="submit" class="btn py-1 px-2" id="current_city">
-                            Current
-                        </button>
+                    <div class="py-1 px-2 d-flex justify-content-center align-items-center">
+                        <button type="submit" class="btn py-1 px-2" id="current_city">Current</button>
                     </div>
                 </div>
             </form>
+            <hr class="line" />
         </div>
-        <div class="container main mx-6 col-xl-9 col-md-10 col-xs-4 my-2 ">
-            <div class="row p-0 content d-flex justify-content-space-evenly">
+       
+        <div class="container d-flex mx-3 mt-3 mb-4">
+            <div class="container main p-0">
                 <div class="col-xl-4 col-md-3 d-flex flex-column align-items-start mb-2 ">
                     <h1 id="city">Kyiv</h1>
                     <div class="my-0" id="day-time"></div>
@@ -65,11 +63,10 @@
                     <div class="my-0 wind">Wind: <span id="wind"></span> km/h</div>
                 </div>
             </div>
-            <hr class="line" />
+            
         </div>
-
         <div class="container p-0 d-flex justify-content-center">
-            <div class="container weather-forecast d-flex " id="forecast"></div>
+            <div class="container weather-forecast d-flex" id="forecast"> </div>
         </div>
     </div>
     <small>

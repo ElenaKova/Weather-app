@@ -1,6 +1,8 @@
 :root {
     --main-color: #6c31ff;
-    --button-color: #fff;
+    --background-main: #fcca979c;
+    --background-forecast: #894aff4d;
+    --white: #fff;
     --border-box: rgb(108, 49, 255, .3);
     --black: rgb(33, 33, 33);
     --light-black: rgba(33, 33, 33, 0.677);
@@ -8,7 +10,7 @@
 
 body {
     font-family: 'Segoe UI';
-    background: linear-gradient(120deg, #ffb76f9c, #5f0bfc88);
+    /* background: linear-gradient(120deg, #ffb76f9c, #5f0bfc88); */
     color: var(--button-color);
     width: 100%;
     min-height: 100vh;
@@ -26,14 +28,17 @@ body {
     }
 
     .main {
-        margin: 8px 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    img.img-fluid {
+    /* img.img-fluid {
         padding: 0;
         width: 84px;
         height: 84px;
-    }
+    } */
 
 }
 
@@ -47,27 +52,27 @@ body {
         align-items: center;
     }
 
-    .main {
-        margin: 8px 0;
-    }
 
-    img.img-fluid {
+    /* img.img-fluid {
         padding: 0;
         width: 84px;
         height: 84px;
-    }
+    } */
 }
 
-@media (min-width: 992px) {
-    main {
-        width: auto !important;
-    }
-}
+@media (min-width: 992px) {}
 
 @media (min-width: 1200px) {
     body {
         padding: 5em 15em;
     }
+
+    /* .main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    } */
 
     .weather-forecast {
         flex-wrap: nowrap;
@@ -80,19 +85,33 @@ body {
     }
 }
 
+.inner-box-day {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .block {
     display: flex;
     flex-wrap: wrap;
     /* border: 3px solid #9dbeff; */
-    padding: 1em;
+    padding: 1em 0 3em;
     background: var(--button-color);
     box-shadow: 5px 5px 15px 1px var(--light-black);
+    /* background: linear-gradient(120deg, #ffb76f9c, #5f0bfc88); */
+    background: var(--background-main);
+    justify-content: space-around;
 }
 
 
 .line {
     width: 100%;
-    height: 5px;
+    height: 3px;
     border: 0 none;
     border-radius: 5px;
     background-color: var(--main-color);
@@ -115,7 +134,7 @@ body {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: var(--main-color);
+    background-color: var(--ƒ-color);
     transition: 0.2s;
     transform: scaleX(0);
     opacity: 0.5;
@@ -144,7 +163,12 @@ body {
 .enter-city .form-control {
     left: .5rem;
     padding-left: 3rem;
+    /* border: 2px solid #000 !important; */
+    background-color: var(--white);
+}
 
+.form-control {
+    width: 50%;
 }
 
 button {
@@ -153,8 +177,9 @@ button {
 
 
 h1#city {
-    color: var(--main-color);
-    font-size: 60px;
+    /* color: var(--main-color); */
+    /* font-size: 60px; */
+    font-size: 48px;
     font-weight: 600;
 }
 
@@ -167,7 +192,8 @@ h1#city {
 
 .temperature {
     color: rgb(33, 33, 33);
-    font-size: 58px;
+    /* font-size: 58px; */
+    font-size: 90px;
     font-weight: 400;
     line-height: 1;
 }
@@ -181,8 +207,8 @@ h1#city {
 
 .weather-temperature img {
     margin-top: 5px;
-    height: 64px;
-    width: 64px;
+    height: 96px;
+    width: 96px;
 }
 
 .weather-temperature .units {
@@ -214,9 +240,10 @@ span {
 
 button.btn {
     display: block;
-    border: 2px solid var(--main-color);
-    background: var(--main-color);
-    color: var(--button-color);
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    /* background: var(--main-color); */
+    /* color: var(--button-color); */
     padding: 0;
     font-size: 16px;
     border-radius: 5px;
@@ -263,22 +290,25 @@ button.btn:hover {
 
 .weather-forecast {
     display: flex;
+    background-color: var(--background-forecast);
+    border-radius: 5px;
+    padding: 1em 0;
 }
 
 .box-day {
     text-align: center;
     color: var(--black);
-    border: 1.3px solid var(--border-box);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0 15px;
+    /* border: 1.3px solid var(--border-box); */
+    /* border-radius: 5px; */
     width: 100% !important;
     justify-content: center;
 }
 
 .day-of-week {
-    font-size: 16px;
+    font-size: 20px;
     opacity: .7;
+    color: var(--white);
+    font-weight: 700;
 }
 
 
