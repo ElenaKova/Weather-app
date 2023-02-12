@@ -53,7 +53,7 @@ function displayForecast(response) {
                 `
         <div class = "box-day" >
         <div class="container inner-box-day d-flex">
-            <div class = "col-sm day-of-week align-items-center " > ${
+            <div class = "day-of-week align-items-center " > ${
                 formatDay(forecastDay.dt)
             } </div>
                 <div><img class="img-fluid" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"

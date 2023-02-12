@@ -39,15 +39,11 @@
             </form>
             <hr class="line" />
         </div>
-       
+
         <div class="container d-flex mx-3 mt-3 mb-4">
             <div class="container main p-0">
-                <div class="col-xl-4 col-md-3 d-flex flex-column align-items-start mb-2 ">
-                    <h1 id="city">Kyiv</h1>
-                    <div class="my-0" id="day-time"></div>
-                    <div class="my-0" id="description"></div>
-                </div>
-                <div class="col-xl-4 col-md-6 d-flex justify-content-center align-items-top mb-2" id="current-degree">
+
+                <div class="item col-xl-4 col-md-6 d-flex  mb-2" id="current-degree">
                     <div class="clearfix weather-temperature">
                         <img src="" alt="Clear" id="icon" />
                         <span class="temperature" id="temperature"></span>
@@ -57,13 +53,18 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-3 d-flex flex-column justify-content-end align-items-end mb-2">
+                <div class="item col-xl-4 col-md-3 d-flex mb-2 ">
+                    <h1 id="city">Kyiv</h1>
+                    <div class="my-0" id="day-time"></div>
+                    <div class="my-0" id="description"></div>
+                </div>
+                <div class="item col-xl-4 col-md-3 d-flex mb-2">
                     <div class="my-0 precipitation">Feels like: <span id="feels"></span>℃</div>
                     <div class="my-0 humidity">Humidity: <span id="humidity"></span>%</div>
                     <div class="my-0 wind">Wind: <span id="wind"></span> km/h</div>
                 </div>
             </div>
-            
+
         </div>
         <div class="container p-0 d-flex justify-content-center">
             <div class="container weather-forecast d-flex" id="forecast"> </div>
